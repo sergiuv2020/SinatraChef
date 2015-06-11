@@ -1,0 +1,18 @@
+| <!doctype html> 
+head
+  script[src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"]
+  script[src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"]
+  script[src="../morris.js"]
+  script[src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.js"]
+  script[src="lib/example.js"]
+  link[rel="stylesheet" href="lib/example.css"]
+  link[rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.min.css"]
+  link[rel="stylesheet" href="../morris.css"]
+  style
+    |  body { background:#ccc; } 
+body
+  h1
+    | Donut Chart
+  #graph
+  pre#code.prettyprint.linenums
+    |  Morris.Donut({ element: 'graph', data: [ {value: 70, label: 'foo'}, {value: 15, label: 'bar'}, {value: 10, label: 'baz'}, {value: 5, label: 'A really really long label'} ], backgroundColor: '#ccc', labelColor: '#060', colors: [ '#0BA462', '#39B580', '#67C69D', '#95D7BB' ], formatter: function (x) { return x + "%"} }); 

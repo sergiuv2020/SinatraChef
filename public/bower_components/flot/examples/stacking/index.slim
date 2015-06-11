@@ -1,0 +1,35 @@
+doctype strict
+html
+  head
+    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
+    title
+      | Flot Examples: Stacking
+    link[href="../examples.css" rel="stylesheet" type="text/css"]
+    script[language="javascript" type="text/javascript" src="../../jquery.js"]
+    script[language="javascript" type="text/javascript" src="../../jquery.flot.js"]
+    script[language="javascript" type="text/javascript" src="../../jquery.flot.stack.js"]
+    script[type="text/javascript"]
+      |  $(function() { var d1 = []; for (var i = 0; i <= 10; i += 1) { d1.push([i, parseInt(Math.random() * 30)]); } var d2 = []; for (var i = 0; i <= 10; i += 1) { d2.push([i, parseInt(Math.random() * 30)]); } var d3 = []; for (var i = 0; i <= 10; i += 1) { d3.push([i, parseInt(Math.random() * 30)]); } var stack = 0, bars = true, lines = false, steps = false; function plotWithOptions() { $.plot("#placeholder", [ d1, d2, d3 ], { series: { stack: stack, lines: { show: lines, fill: true, steps: steps }, bars: { show: bars, barWidth: 0.6 } } }); } plotWithOptions(); $(".stackControls button").click(function (e) { e.preventDefault(); stack = $(this).text() == "With stacking" ? true : null; plotWithOptions(); }); $(".graphControls button").click(function (e) { e.preventDefault(); bars = $(this).text().indexOf("Bars") != -1; lines = $(this).text().indexOf("Lines") != -1; steps = $(this).text().indexOf("steps") != -1; plotWithOptions(); }); // Add the Flot version string to the footer $("#footer").prepend("Flot " + $.plot.version + " – "); }); 
+  body
+    #header
+      h2
+        | Stacking
+    #content
+      .demo-container
+        #placeholder.demo-placeholder
+      p
+        | With the stack plugin, you can have Flot stack the series. This is useful if you wish to display both a total and the constituents it is made of. The only requirement is that you provide the input sorted on x.
+      p.stackControls
+        button
+          | With stacking
+        button
+          | Without stacking
+      p.graphControls
+        button
+          | Bars
+        button
+          | Lines
+        button
+          | Lines with steps
+    #footer
+      |  Copyright © 2007 - 2014 IOLA and Ole Laursen 

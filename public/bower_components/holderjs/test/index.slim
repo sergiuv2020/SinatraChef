@@ -1,0 +1,148 @@
+| <!doctype html> 
+html
+  head
+    title
+      | Holder Testing
+    meta[charset="utf-8"]
+    link.holderjs[rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"]
+    link.holderjs[href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css"]
+    link.holderjs[href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css"]
+    style
+      |  body {font-family:Arial,sans-serif;width:1050px;margin:0 auto} .thumb {width:300px;height:250px;margin:25px;float:left} .thumb img, .thumb .holderjs, .thumb object {display:block;margin:0 auto} .thumb .caption {padding:10px;text-align:center;margin-top:10px} .thumb.fullpage {float:none;clear:both;width:auto;height:100px;margin:25px} .autosize img {width:100%} #holder1 {background:url('?holder.js/300x200/text:Background%20placeholder/^eee:^222');width:300px;height:200px} 
+  body
+    .thumb
+      img[data-src="holder.js/300x200"]
+      .caption
+        |  Plain placeholder 
+    .thumb
+      img[data-src="holder.js/300x200/social"]
+      .caption
+        |  Themed placeholder 
+    .thumb
+      img[data-src="holder.js/300x200/random/font:Droid Sans/text:Droid Sans"]
+      .caption
+        |  Placeholder with random theme 
+    .thumb
+      img[data-src="holder.js/300x200/text:заполнитель"]
+      .caption
+        |  Placeholder with text 
+    .thumb
+      img[data-src="holder.js/300x200/#EE403D:#FFFFFF/text:Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
+      .caption
+        |  Placeholder with lengthy text 
+    .thumb
+      img[data-src="holder.canvas/300x200/#EE403D:#FFFFFF/text:Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
+      .caption
+        |  Canvas placeholder with lengthy text 
+    .thumb
+      img[data-src="holder.js/300x200/social/text:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor, libero quis accumsan fringilla, augue est laoreet orci, consectetur euismod augue nisl sit amet arcu. Fusce ultrices ornare metus in porta. Aenean ac nisl ut tellus dignissim auctor quis id arcu. Vivamus lorem neque, pulvinar non dictum vel, sagittis lobortis odio."]
+      .caption
+        |  Placeholder with very lengthy text 
+    .thumb
+      img[data-src="holder.js/300x200/social/text:Lorem ipsum   \n   dolor sit amet, consectetur adipiscing elit."]
+      .caption
+        |  Placeholder with custom newline 
+    .thumb
+      img[data-src="holder.js/300x200/randomrandom/hello:world/$$$$/%25%25%67/industrial/text:заполнитель"]
+      .caption
+        |  Placeholder with text and bad flags 
+    .thumb
+      script
+        |  var r = Math.random(); if(r > 0.5){ document.write('<img data-src="holder.js/200x150" src="missing.jpg" style="width:200px;height:150px;outline:solid 3px red">'); } else{ document.write('<img data-src="holder.js/200x150" src="image.jpg" style="width:200px;height:150px;outline:solid 3px green">'); } 
+      .caption
+        |  Placeholder with (randomly) missing image source 
+    .thumb
+      .autosize
+        img[data-src="holder.js/200x133/#111:#ffff00/auto"]
+      .caption
+        |  Auto-sized placeholder 
+    .thumb
+      .autosize
+        img[data-src="holder.js/200x133/#111:#ffff00/auto/textmode:exact"]
+      .caption
+        |  Auto-sized placeholder in exact mode 
+    .thumb
+      #holder1.holderjs
+      .caption
+        code
+          | <div>
+        |  with background placeholder 
+    .thumb
+      .holderjs[style="width:300px;height:200px" data-background-src="?holder.js/300x200/#ff8362:#5e422e"]
+      .caption
+        code
+          | <div>
+        |  with 
+        code
+          | data-background-src
+        |  placeholder 
+    .thumb
+      #thumb1
+
+      .caption
+        |  Placeholder added through Holder API 
+    .thumb
+      img[data-src="custom.holder/150x100/custom/auto" style="width:300px;height:200px"]
+      .caption
+        |  Auto-sized 
+        code
+          | canvas
+        |  placeholder with custom domain and theme 
+    .thumb
+      img[data-src="holder.js/300x200/font:Pacifico/#4466ff:#fff/text:Pacifico"]
+      .caption
+        |  Placeholder using 
+        span[style="font-family:Pacifico"]
+          | Pacifico
+        |  font
+    .thumb
+      object[data="holder.js/300x200/font:Pacifico/#4466ff:#fff/text:Pacifico"]
+      .caption
+        code
+          | object
+        |  placeholder using 
+        span[style="font-family:Pacifico"]
+          | Pacifico
+        |  font
+    .thumb
+      div[style="overflow:hidden"]
+        img[data-src="holder.js/50x75/sky" style="float:left"]
+        img[data-src="holder.js/100x75/vine" style="float:left"]
+        img[data-src="holder.js/150x75/lava" style="float:left"]
+      div[style="overflow:hidden"]
+        img[data-src="holder.js/300x125/industrial" style="float:left"]
+      .caption
+        |  Placeholders demonstrating adaptive text size 
+    .thumb
+      div[style="height:200px"]
+        img[data-src="holder.js/100%25x50%25/sky"]
+        img[data-src="holder.js/100%25x50%25/lava"]
+      .caption
+        | Two fluid placeholders in one parent using URI encoding
+    .thumb
+      img[data-src="holder.js/80%x50%/vine"]
+      .caption
+        |  Fluid placeholder 
+    .fullpage.thumb
+      img[data-src="holder.js/90%x80%/sky"]
+      .caption
+        |  Full-page fluid placeholder 
+    .fullpage.thumb
+      object[data-src="holder.js/90%x80%/vine"]
+      .caption
+        |  Full-page fluid 
+        code
+          | object
+        |  placeholder 
+    .fullpage.thumb
+      img[data-src="holder.js/90%x80%/lava/textmode:literal"]
+      .caption
+        |  Full-page fluid placeholder in literal mode 
+    .thumb
+      img[data-src="holder.js/300x200"]
+      .caption
+        |  Plain placeholder to ensure themes aren't leaked forward 
+    script[src="http://code.jquery.com/jquery-1.11.0.min.js"]
+    script[src="../holder.js"]
+    script
+      |  Holder.add_image("holder.js/300x200/sky", "#thumb1").run(); Holder.add_theme("custom", {foreground: "#fff", background: "#000", size: 15}).run({ domain: "custom.holder", use_canvas: true }) Holder.add_theme("fontawesome", {foreground: "#00ccaa", background: "#002211", size: 12}).run({ domain: "fontawesome.holder" }) Holder.run({ domain: "holder.canvas", use_canvas: true }); 

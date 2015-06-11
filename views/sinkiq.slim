@@ -1,0 +1,27 @@
+#page-wrapper
+  .row
+    .col-lg-12
+      h1.page-header
+        | Sidekiq
+      .row
+        .col-lg-12
+          .panel.panel-default
+            .panel-heading
+              a[href="/sidekiq"]
+               | Sidekiq Monitoring Dashboard
+            .panel-body
+              .col-lg-3
+                .form-group
+                  h2 Failed: #{@failed}
+                  h2 Processed: #{@processed}
+                  h2 In Progress: #{@inProgress}
+                  .row
+                    form method="post" action="/msg"
+                      input.form-control[placeholder="msg" name="msg" type="text" ]
+                      p
+                      input.form-control[type="submit" value="Add Message"]
+                      a href="/sinkiq"
+                        | Refresh page
+                      h3 Messages
+                      - @messages.each do |msg|
+                        p #{msg}

@@ -1,0 +1,35 @@
+#page-wrapper
+  .row
+    .col-lg-12
+      h1.page-header
+        | Chef Recipe Execution
+  .row
+    .col-lg-12
+      .panel.panel-default
+        .panel-heading
+          |  Chef Builder
+        .panel-body
+          .row
+            form[role="form" method="post" action="/run"]
+              .col-lg-2
+                  .form-group
+                    label
+                      | Machine to run on:
+                    input.form-control[placeholder="IpAddress/Hostname" name="ipAddress" type="text" ]
+                    input.form-control[placeholder="Username (must be root)" name="username" type="text" ]
+                    input.form-control[placeholder="Password" type="password" name="password" ]
+                  .form-group
+                    button.btn.btn-default[type="reset"]
+                      | Reset Configuration
+              .col-lg-7
+                  .form-group
+                    label
+                      | Upload json for attributes
+                    input[type="file"]
+                  .form-group
+                    label
+                      | Enter json formatted attributes
+                    textarea.form-control[rows="10"]
+                    - ['fs','vxc','mada'].each do |magic|
+                      button.btn.btn-default #{magic}
+                    button.btn.btn-outline.btn-danger.btn-lg.btn-block[type="submit" value="run"] Run Chef

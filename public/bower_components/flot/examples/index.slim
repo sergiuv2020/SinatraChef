@@ -1,0 +1,127 @@
+doctype strict
+html
+  head
+    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
+    title
+      | Flot Examples
+    link[href="examples.css" rel="stylesheet" type="text/css"]
+    style
+      |  h3 { margin-top: 30px; margin-bottom: 5px; } 
+    script[language="javascript" type="text/javascript" src="../jquery.js"]
+    script[language="javascript" type="text/javascript" src="../jquery.flot.js"]
+    script[type="text/javascript"]
+      |  $(function() { // Add the Flot version string to the footer $("#footer").prepend("Flot " + $.plot.version + " – "); }); 
+  body
+    #header
+      h2
+        | Flot Examples
+    #content
+      p
+        | Here are some examples for 
+        a[href="http://www.flotcharts.org"]
+          | Flot
+        | , the Javascript charting library for jQuery:
+      h3
+        | Basic Usage
+      ul
+        li
+          a[href="basic-usage/index.html"]
+            | Basic example
+        li
+          a[href="series-types/index.html"]
+            | Different graph types
+          |  and 
+          a[href="categories/index.html"]
+            | simple categories/textual data
+        li
+          a[href="basic-options/index.html"]
+            | Setting various options
+          |  and 
+          a[href="annotating/index.html"]
+            | annotating a chart
+        li
+          a[href="ajax/index.html"]
+            | Updating graphs with AJAX
+          |  and 
+          a[href="realtime/index.html"]
+            | real-time updates
+      h3
+        | Interactivity
+      ul
+        li
+          a[href="series-toggle/index.html"]
+            | Turning series on/off
+        li
+          a[href="selection/index.html"]
+            | Rectangular selection support and zooming
+          |  and 
+          a[href="zooming/index.html"]
+            | zooming with overview
+          |  (both with selection plugin)
+        li
+          a[href="interacting/index.html"]
+            | Interacting with the data points
+        li
+          a[href="navigate/index.html"]
+            | Panning and zooming
+          |  (with navigation plugin)
+        li
+          a[href="resize/index.html"]
+            | Automatically redraw when window is resized
+          |  (with resize plugin)
+      h3
+        | Additional Features
+      ul
+        li
+          a[href="symbols/index.html"]
+            | Using other symbols than circles for points
+          |  (with symbol plugin)
+        li
+          a[href="axes-time/index.html"]
+            | Plotting time series
+          | , 
+          a[href="visitors/index.html"]
+            | visitors per day with zooming and weekends
+          |  (with selection plugin) and 
+          a[href="axes-time-zones/index.html"]
+            | time zone support
+        li
+          a[href="axes-multiple/index.html"]
+            | Multiple axes
+          |  and 
+          a[href="axes-interacting/index.html"]
+            | interacting with the axes
+        li
+          a[href="threshold/index.html"]
+            | Thresholding the data
+          |  (with threshold plugin)
+        li
+          a[href="stacking/index.html"]
+            | Stacked charts
+          |  (with stacking plugin)
+        li
+          a[href="percentiles/index.html"]
+            | Using filled areas to plot percentiles
+          |  (with fillbetween plugin)
+        li
+          a[href="tracking/index.html"]
+            | Tracking curves with crosshair
+          |  (with crosshair plugin)
+        li
+          a[href="image/index.html"]
+            | Plotting prerendered images
+          |  (with image plugin)
+        li
+          a[href="series-errorbars/index.html"]
+            | Plotting error bars
+          |  (with errorbars plugin)
+        li
+          a[href="series-pie/index.html"]
+            | Pie charts
+          |  (with pie plugin)
+        li
+          a[href="canvas/index.html"]
+            | Rendering text with canvas instead of HTML
+          |  (with canvas plugin)
+    #footer
+      |  Copyright © 2007 - 2013 IOLA and Ole Laursen 
