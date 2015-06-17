@@ -29,7 +29,6 @@ get '/sinkiq' do
   @inProgress = workers.size
   @failed = stats.failed
   @processed = stats.processed
-  @messages = $redis.lrange('chef-run', 0, -1)
   slim :sinkiq
 end
 
@@ -37,7 +36,32 @@ get '/sidekiq' do
   redirect to('http://localhost:9494')
 end
 
-post '/msg' do
-  SinatraWorker.perform_async params[:msg]
-  redirect to('/sinkiq')
+get '/run' do
+  job_id = SinatraWorker.perform_async
+  jobproperties = "stack1, postgres, 4 snodes"
+  $redis.hsetnx("jobs", job_id, jobproperties )
+  return_message = {}
+  return_message[:job_id] = job_id
+  return_message[:jobproperties] = jobproperties
+  return_message.to_json
+  # redirect to('http://localhost:9494')
+end
+
+get '/job_status/:job_id' do
+  data = Sidekiq::Status::get_all params[:job_id]
+  return_message = data
+  return_message.to_json
+end
+
+get '/getalljobs' do
+  return_message = {}
+
+  job_ids = $redis.hkeys("jobs")
+  job_ids.each do |key|
+  	data = Sidekiq::Status::get_all key
+  	data.merge!(properties: $redis.hget("jobs",key))
+    return_message[key] = data
+  end
+
+  return_message.to_json
 end
